@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ChipRecyclerView.iml" filepath="$PROJECT_DIR$/.idea/modules/ChipRecyclerView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ChipRecyclerView.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ChipRecyclerView.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/chiprecyclerview/ChipRecyclerView.chiprecyclerview.iml" filepath="$PROJECT_DIR$/.idea/modules/chiprecyclerview/ChipRecyclerView.chiprecyclerview.iml" />
+    </modules>
+  </component>
+</project>

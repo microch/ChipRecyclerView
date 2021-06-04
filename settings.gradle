@@ -1,0 +1,3 @@
+rootProject.name = "ChipRecyclerView"
+include ':app'
+include ':chiprecyclerview'

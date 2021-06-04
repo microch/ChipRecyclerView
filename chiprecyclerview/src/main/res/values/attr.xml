@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ChipRecyclerView">
+        <attr name="enableSelection" format="boolean" />
+        <attr name="singleSelection" format="boolean" />
+        <attr name="lastItemSelection" format="boolean" />
+        <attr name="selectionRequired" format="boolean" />
+        <attr name="spanCount" format="integer" />
+        <attr name="maxSelection" format="integer" />
+        <attr name="spacing" format="dimension" />
+        <attr name="itemTextSize" format="dimension" />
+        <attr name="itemTextBold" format="boolean" />
+        <attr name="itemTextColor" format="color" />
+        <attr name="itemStrokeColor" format="color" />
+        <attr name="itemBackgroundColor" format="color" />
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="15dp"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:gravity="center"
+            android:text="不可选"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+        <org.fengye.chiprecyclerview.ChipRecyclerView
+            android:id="@+id/test0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:enableSelection="false"
+            tools:itemCount="1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="4dp"
+            android:gravity="center"
+            android:text="多选、最大选择数量、spanCount"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+        <org.fengye.chiprecyclerview.ChipRecyclerView
+            android:id="@+id/test1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"
+            app:maxSelection="3"
+            app:spanCount="3"
+            tools:itemCount="1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="4dp"
+            android:gravity="center"
+            android:text="单选"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+        <org.fengye.chiprecyclerview.ChipRecyclerView
+            android:id="@+id/test2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"
+            app:singleSelection="true"
+            tools:itemCount="1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="4dp"
+            android:gravity="center"
+            android:text="单选、selectionRequired"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+        <org.fengye.chiprecyclerview.ChipRecyclerView
+            android:id="@+id/test3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"
+            app:selectionRequired="true"
+            app:singleSelection="true"
+            tools:itemCount="1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="4dp"
+            android:gravity="center"
+            android:text="禁止选择"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+        <org.fengye.chiprecyclerview.ChipRecyclerView
+            android:id="@+id/test4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"
+            app:selectionRequired="true"
+            app:singleSelection="true"
+            tools:itemCount="1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="4dp"
+            android:gravity="center"
+            android:text="最后一个不可选+点击事件"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+        <org.fengye.chiprecyclerview.ChipRecyclerView
+            android:id="@+id/test5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"
+            app:lastItemSelection="false"
+            app:singleSelection="true"
+            tools:itemCount="1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="4dp"
+            android:gravity="center"
+            android:text="样式"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+        <org.fengye.chiprecyclerview.ChipRecyclerView
+            android:id="@+id/test6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"
+            app:itemBackgroundColor="@color/selector_custom_tag_bg"
+            app:itemStrokeColor="@color/selector_custom_tag_stroke_color"
+            app:itemTextBold="true"
+            app:itemTextColor="@color/selector_custom_tag_text"
+            app:itemTextSize="20sp"
+            app:singleSelection="true"
+            app:spanCount="2"
+            tools:itemCount="1" />
+
+
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="获取第二个ChipRecyclerView选中"
+            android:textAllCaps="false"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="4dp"
+            android:gravity="left" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.core.widget.NestedScrollView>
