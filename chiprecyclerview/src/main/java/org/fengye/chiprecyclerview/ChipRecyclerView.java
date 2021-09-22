@@ -156,6 +156,13 @@ public class ChipRecyclerView extends RecyclerView {
         adapter.setOnItemSelectedListener(onItemSelectedListener);
     }
 
+    public void setOnItemDeSelectedListener(ChipAdapter.OnItemDeSelectedListener onItemDeSelectedListener) {
+        if (adapter == null) {
+            return;
+        }
+        adapter.setOnItemDeSelectedListener(onItemDeSelectedListener);
+    }
+
 
     public void addLastItem(IChipBean chipBean) {
         if (adapter == null) {

@@ -23,6 +23,7 @@ import java.util.List;
 public class ChipAdapter extends BaseQuickAdapter<IChipBean, BaseViewHolder> {
 
     private OnItemSelectedListener onItemSelectedListener;
+    private OnItemDeSelectedListener onItemDeSelectedListener;
 
     private boolean enableSelection = true;
 
@@ -112,7 +113,11 @@ public class ChipAdapter extends BaseQuickAdapter<IChipBean, BaseViewHolder> {
                 if (singleSelection) {
                     if (b) {
                         if (selectedList.size() > 0) {
+                            if (onItemDeSelectedListener != null) {
+                                onItemDeSelectedListener.onItemDeSelected(selectedList.get(0));
+                            }
                             selectedList.clear();
+
                         }
                         selectedList.add(chipBean);
                         if (onItemSelectedListener != null) {
@@ -126,9 +131,15 @@ public class ChipAdapter extends BaseQuickAdapter<IChipBean, BaseViewHolder> {
 
                     } else {
                         if (!selectionRequired) {
+                            if (onItemDeSelectedListener != null) {
+                                onItemDeSelectedListener.onItemDeSelected(chipBean);
+                            }
                             selectedList.remove(chipBean);
                         } else {
                             if (selectedList.size() > 1) {
+                                if (onItemDeSelectedListener != null) {
+                                    onItemDeSelectedListener.onItemDeSelected(chipBean);
+                                }
                                 selectedList.remove(chipBean);
                             } else {
                                 root.setChecked(true);
@@ -148,9 +159,15 @@ public class ChipAdapter extends BaseQuickAdapter<IChipBean, BaseViewHolder> {
                         }
                     } else {
                         if (!selectionRequired) {
+                            if (onItemDeSelectedListener != null) {
+                                onItemDeSelectedListener.onItemDeSelected(chipBean);
+                            }
                             selectedList.remove(chipBean);
                         } else {
                             if (selectedList.size() > 1) {
+                                if (onItemDeSelectedListener != null) {
+                                    onItemDeSelectedListener.onItemDeSelected(chipBean);
+                                }
                                 selectedList.remove(chipBean);
                             } else {
                                 root.setChecked(true);
@@ -173,6 +190,10 @@ public class ChipAdapter extends BaseQuickAdapter<IChipBean, BaseViewHolder> {
 
     public void setOnItemSelectedListener(OnItemSelectedListener onItemSelectedListener) {
         this.onItemSelectedListener = onItemSelectedListener;
+    }
+
+    public void setOnItemDeSelectedListener(OnItemDeSelectedListener onItemDeSelectedListener) {
+        this.onItemDeSelectedListener = onItemDeSelectedListener;
     }
 
     public void setSingleSelection(boolean singleSelection) {
@@ -207,6 +228,10 @@ public class ChipAdapter extends BaseQuickAdapter<IChipBean, BaseViewHolder> {
 
     public interface OnItemSelectedListener {
         <T extends IChipBean> void onItemSelected(T chipBean);
+    }
+
+    public interface OnItemDeSelectedListener {
+        <T extends IChipBean> void onItemDeSelected(T chipBean);
     }
 
 }
