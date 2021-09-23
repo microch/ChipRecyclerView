@@ -113,10 +113,11 @@ public class ChipAdapter extends BaseQuickAdapter<IChipBean, BaseViewHolder> {
                 if (singleSelection) {
                     if (b) {
                         if (selectedList.size() > 0) {
-                            if (onItemDeSelectedListener != null) {
-                                onItemDeSelectedListener.onItemDeSelected(selectedList.get(0));
-                            }
+                            IChipBean iChipBean = selectedList.get(0);
                             selectedList.clear();
+                            if (onItemDeSelectedListener != null) {
+                                onItemDeSelectedListener.onItemDeSelected(iChipBean);
+                            }
 
                         }
                         selectedList.add(chipBean);
@@ -131,16 +132,16 @@ public class ChipAdapter extends BaseQuickAdapter<IChipBean, BaseViewHolder> {
 
                     } else {
                         if (!selectionRequired) {
+                            selectedList.remove(chipBean);
                             if (onItemDeSelectedListener != null) {
                                 onItemDeSelectedListener.onItemDeSelected(chipBean);
                             }
-                            selectedList.remove(chipBean);
                         } else {
                             if (selectedList.size() > 1) {
+                                selectedList.remove(chipBean);
                                 if (onItemDeSelectedListener != null) {
                                     onItemDeSelectedListener.onItemDeSelected(chipBean);
                                 }
-                                selectedList.remove(chipBean);
                             } else {
                                 root.setChecked(true);
                             }
@@ -159,16 +160,16 @@ public class ChipAdapter extends BaseQuickAdapter<IChipBean, BaseViewHolder> {
                         }
                     } else {
                         if (!selectionRequired) {
+                            selectedList.remove(chipBean);
                             if (onItemDeSelectedListener != null) {
                                 onItemDeSelectedListener.onItemDeSelected(chipBean);
                             }
-                            selectedList.remove(chipBean);
                         } else {
                             if (selectedList.size() > 1) {
+                                selectedList.remove(chipBean);
                                 if (onItemDeSelectedListener != null) {
                                     onItemDeSelectedListener.onItemDeSelected(chipBean);
                                 }
-                                selectedList.remove(chipBean);
                             } else {
                                 root.setChecked(true);
                             }
