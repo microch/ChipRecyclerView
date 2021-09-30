@@ -227,12 +227,12 @@ public class ChipAdapter extends BaseQuickAdapter<IChipBean, BaseViewHolder> {
 
     }
 
-    public interface OnItemSelectedListener {
-        <T extends IChipBean> void onItemSelected(T chipBean);
+    public interface OnItemSelectedListener<T extends IChipBean> {
+        void onItemSelected(T chipBean);
     }
 
-    public interface OnItemDeSelectedListener {
-        <T extends IChipBean> void onItemDeSelected(T chipBean);
+    public interface OnItemDeSelectedListener<T extends IChipBean> {
+        void onItemDeSelected(T chipBean);
     }
 
 }
